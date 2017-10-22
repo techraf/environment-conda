@@ -32,9 +32,9 @@ pip install proxmoxer
 # other:
 pip install molecule python-vagrant
 
-conda install --yes -c ruby-lang ruby=2.2.3
-gem install inspec
-gem install serverspec
+#conda install --yes -c ruby-lang ruby=2.2.3
+#gem install inspec
+#gem install serverspec
 
 ## shellcheck disable=SC2016
 # echo 'source "${CONDA_PREFIX}/etc/bash_completion.d/molecule.bash-completion.sh"' >> "${CONDA_PREFIX}/bin/activate"
