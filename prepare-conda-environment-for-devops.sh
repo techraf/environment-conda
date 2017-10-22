@@ -17,6 +17,8 @@ pip install ansible
 pip install ansible-lint
 # for `password_hash` filter:
 pip install passlib
+# for Ansible Tower:
+pip install ansible-tower-cli
 # for Amazon AWS:
 pip install boto
 # for Azure:
