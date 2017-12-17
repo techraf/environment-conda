@@ -37,6 +37,8 @@ pip install proxmoxer
 # other:
 pip install molecule python-vagrant
 
+pip install ansible-container[docker,openshift]
+
 #conda install --yes -c ruby-lang ruby=2.2.3
 #gem install inspec
 #gem install serverspec
