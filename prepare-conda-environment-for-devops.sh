@@ -12,7 +12,9 @@ conda create --yes --name ${env_name}
 # shellcheck disable=SC1091
 source activate ${env_name}
 
-conda install --yes pyyaml pycrypto jinja2 six jmespath
+conda install --yes pyyaml pycrypto six jmespath
+# Install Jinja2 from PyPI as conda installs older version
+pip install jinja2
 pip install ansible
 pip install ansible-lint
 # for `password_hash` filter:
