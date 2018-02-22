@@ -3,6 +3,7 @@ conda install --yes pyyaml pycrypto six jmespath
 pip install jinja2
 pip install ansible
 pip install ansible-lint
+pip install netaddr
 # for `password_hash` filter:
 pip install passlib
 # for Ansible Tower:
