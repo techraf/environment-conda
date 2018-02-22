@@ -21,7 +21,7 @@ pip install pyvmomi
 # for Proxmox:
 pip install proxmoxer
 # other:
-pip install molecule python-vagrant
+pip install molecule==1.25.0 python-vagrant
 
 pip install ansible-container[docker,openshift]
 
