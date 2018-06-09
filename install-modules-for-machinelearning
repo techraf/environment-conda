@@ -1,0 +1,4 @@
+#!/bin/bash
+pip install gym
+pip install keras
+pip install tensorflow
