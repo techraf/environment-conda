@@ -11,17 +11,21 @@ rm -rf ~/anaconda2
 bash ~/DML/anaconda/Anaconda2-5.2.0-MacOSX-x86_64.sh -b
 
 conda create --yes -n jupy27 python=2.7
+# shellcheck disable=SC1091
 source activate jupy27
 conda install --yes notebook ipykernel
 ipython kernel install --user --display-name "Python 2"
 source install-ansible-and-dependencies
+# shellcheck disable=SC1091
 source deactivate
 
 conda create --yes -n jupy36 python=3.6
+# shellcheck disable=SC1091
 source activate jupy36
 conda install --yes notebook ipykernel
 ipython kernel install --user --display-name "Python 3"
 source install-modules-for-machinelearning
+# shellcheck disable=SC1091
 source deactivate
 
 source install-missing-dependencies
