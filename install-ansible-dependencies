@@ -1,0 +1,20 @@
+#!/bin/bash
+pip install ansible-lint
+pip install netaddr
+# for `password_hash` filter:
+pip install passlib
+# for Ansible Tower:
+# pip install ansible-tower-cli==3.1.7
+pip install ansible-tower-cli
+# for Amazon AWS:
+pip install boto
+# for Azure:
+# pip install azure==2.0.0rc5 msrest msrestazure enum packaging
+# for DigitalOcean:
+pip install dopy
+# for Windows:
+pip install pywinrm
+# for VMware:
+pip install pyvmomi
+# for Proxmox:
+pip install proxmoxer

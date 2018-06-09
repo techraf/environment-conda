@@ -20,7 +20,8 @@ conda create --yes -n ${conda_environment_for_jupyter_python2} python=2.7
 source activate ${conda_environment_for_jupyter_python2}
 conda install --yes notebook ipykernel
 ipython kernel install --user --display-name "Python 2"
-source install-ansible-and-dependencies
+pip install ansible
+source install-ansible-dependencies
 # shellcheck disable=SC1091
 source deactivate
 
@@ -34,4 +35,5 @@ source install-modules-for-machinelearning
 source deactivate
 
 source install-missing-dependencies
-source install-ansible-and-dependencies
+pip install ansible
+source install-ansible-dependencies
