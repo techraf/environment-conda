@@ -13,7 +13,7 @@ if ! grep -e "export PATH=.*/anaconda2/bin:\$PATH" ~/.bash_profile; then
 fi
 
 rm -rf ${anaconda_installation_path}
-bash ${anaconda_installer_path} -b
+bash ${anaconda_installer_path} -b -p ${anaconda_installation_path}
 
 conda create --yes -n ${conda_environment_for_jupyter_python2} python=2.7
 # shellcheck disable=SC1091
