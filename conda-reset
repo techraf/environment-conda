@@ -15,3 +15,6 @@ source activate jupy36
 conda install --yes notebook ipykernel
 ipython kernel install --user --display-name "Python 3"
 source deactivate
+
+source install-missing-dependencies
+source install-ansible-and-dependencies
