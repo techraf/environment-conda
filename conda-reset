@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# grep ~/.bash_profile and find PATH line
+#   fail if the line is not present
+
+rm -rf ~/anaconda2
+bash ~/DML/anaconda/Anaconda2-5.2.0-MacOSX-x86_64.sh -b
+conda create --yes -n jupy27 python=2.7
+source activate py27
+conda install --yes notebook ipykernel
+ipython kernel install --user --display-name "Python 2"
+source deactivate
+conda create --yes -n jupy36 python=3.6
+source activate py36
+conda install --yes notebook ipykernel
+ipython kernel install --user --display-name "Python 3"
+source deactivate
