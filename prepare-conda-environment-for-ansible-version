@@ -21,6 +21,7 @@ fi
 
 env_name="ansible-${requested_ansible_version}"
 
+conda remove --yes --name "${env_name}" --all
 conda create --yes --name "${env_name}" python=2.7
 # shellcheck disable=SC1091
 source activate "${env_name}"
