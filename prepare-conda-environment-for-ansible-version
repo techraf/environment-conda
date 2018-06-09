@@ -1,0 +1,23 @@
+#!/bin/bash
+
+requested_ansible_version=$1
+
+if [ "${requested_ansible_version}" == "" ]; then
+    echo Please provide Ansible version
+    exit 1
+fi
+
+package_url_check_result=$(curl -I -L -s -o /dev/null -w "%{http_code}" https://pypi.org/project/ansible/"${requested_ansible_version}")
+
+if [ "${package_url_check_result}" != "200" ]; then
+    echo "Ansible version ${requested_ansible_version} not found on PyPI"
+    exit 1
+fi
+
+env_name="ansible-${requested_ansible_version}"
+
+conda create --yes --name "${env_name}" python=2.7
+# shellcheck disable=SC1091
+source activate "${env_name}"
+pip install ansible=="${requested_ansible_version}"
+source install-ansible-dependencies
