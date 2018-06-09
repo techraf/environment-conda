@@ -1,5 +1,7 @@
 #!/bin/bash
 
+anaconda_installer_path=~/DML/anaconda/Anaconda2-5.2.0-MacOSX-x86_64.sh
+anaconda_installation_path=~/anaconda2
 conda_environment_for_jupyter_python2=jupy27
 conda_environment_for_jupyter_python3=jupy36
 
@@ -10,8 +12,8 @@ if ! grep -e "export PATH=.*/anaconda2/bin:\$PATH" ~/.bash_profile; then
   exit 1
 fi
 
-rm -rf ~/anaconda2
-bash ~/DML/anaconda/Anaconda2-5.2.0-MacOSX-x86_64.sh -b
+rm -rf ${anaconda_installation_path}
+bash ${anaconda_installer_path} -b
 
 conda create --yes -n ${conda_environment_for_jupyter_python2} python=2.7
 # shellcheck disable=SC1091
