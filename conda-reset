@@ -35,7 +35,7 @@ source install-ansible-dependencies
 source deactivate
 
 
-#### jupy27 environment ####
+#### jupy36 environment ####
 
 conda create --yes -n ${conda_environment_for_jupyter_python3} anaconda python=3.6
 # shellcheck disable=SC1091
