@@ -15,7 +15,7 @@ fi
 rm -rf ${anaconda_installation_path}
 bash ${anaconda_installer_path} -b -p ${anaconda_installation_path}
 
-conda create --yes -n ${conda_environment_for_jupyter_python2} python=2.7
+conda create --yes -n ${conda_environment_for_jupyter_python2} anaconda python=2.7
 # shellcheck disable=SC1091
 source activate ${conda_environment_for_jupyter_python2}
 conda install --yes notebook ipykernel
@@ -25,7 +25,7 @@ source install-ansible-dependencies
 # shellcheck disable=SC1091
 source deactivate
 
-conda create --yes -n ${conda_environment_for_jupyter_python3} python=3.6
+conda create --yes -n ${conda_environment_for_jupyter_python3} anaconda python=3.6
 # shellcheck disable=SC1091
 source activate ${conda_environment_for_jupyter_python3}
 conda install --yes notebook ipykernel
