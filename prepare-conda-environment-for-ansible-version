@@ -8,16 +8,14 @@ if [ "${requested_ansible_version}" == "" ]; then
     exit 1
 fi
 
-package_url_check_result=$(curl -I -L -s -o /dev/null -w "%{http_code}" https://pypi.org/project/ansible/"${requested_ansible_version}")
+# in PyPI some package versions, like ansible-1.9.0 have null value, so first filter them out
+# shellcheck disable=SC2086
+package_url_check_result=$(curl -s https://pypi.org/pypi/ansible/json | jq ".releases | with_entries(select(.value!=[])) | keys | index(["\"${requested_ansible_version}"\"])")
 
-if [ "${package_url_check_result}" != "200" ]; then
+if [ "${package_url_check_result}" == "null" ]; then
     echo "Ansible version ${requested_ansible_version} not found on PyPI"
     exit 1
 fi
-
-# Still it's not 100% reliable, for example https://pypi.org/project/ansible/1.9
-#   is a valid URL, but there is no such package version and
-#   `pip install ansible==1.9` fails
 
 env_name="ansible-${requested_ansible_version}"
 
