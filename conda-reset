@@ -18,6 +18,7 @@ rm -rf ${anaconda_installation_path}
 bash ${anaconda_installer_path} -b -p ${anaconda_installation_path}
 
 source install-missing-dependencies
+pip install nbstripout nbconvert
 pip install ansible
 source install-ansible-dependencies
 
