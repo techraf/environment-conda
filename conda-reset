@@ -12,8 +12,17 @@ if ! grep -e "export PATH=.*/anaconda2/bin:\$PATH" ~/.bash_profile; then
   exit 1
 fi
 
+#### base environment ####
+
 rm -rf ${anaconda_installation_path}
 bash ${anaconda_installer_path} -b -p ${anaconda_installation_path}
+
+source install-missing-dependencies
+pip install ansible
+source install-ansible-dependencies
+
+
+#### jupy27 environment ####
 
 conda create --yes -n ${conda_environment_for_jupyter_python2} anaconda python=2.7
 # shellcheck disable=SC1091
@@ -25,6 +34,9 @@ source install-ansible-dependencies
 # shellcheck disable=SC1091
 source deactivate
 
+
+#### jupy27 environment ####
+
 conda create --yes -n ${conda_environment_for_jupyter_python3} anaconda python=3.6
 # shellcheck disable=SC1091
 source activate ${conda_environment_for_jupyter_python3}
@@ -33,7 +45,3 @@ ipython kernel install --user --display-name "Python 3"
 source install-modules-for-machinelearning
 # shellcheck disable=SC1091
 source deactivate
-
-source install-missing-dependencies
-pip install ansible
-source install-ansible-dependencies
