@@ -11,6 +11,5 @@ pip install pyyaml
 pip install pycrypto
 pip install jinja2
 pip install six
-pip install jmespath
 pip install git+https://github.com/ansible/ansible.git@devel
 source install-ansible-dependencies

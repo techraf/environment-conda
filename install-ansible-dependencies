@@ -1,7 +1,8 @@
 #!/bin/bash
 pip install ansible-lint
+# for filters:
+pip install jmespath
 pip install netaddr
-# for `password_hash` filter:
 pip install passlib
 # for Ansible Tower:
 # pip install ansible-tower-cli==3.1.7
