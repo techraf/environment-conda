@@ -2,3 +2,4 @@
 pip install gym
 pip install keras
 pip install tensorflow
+pip install h2o
