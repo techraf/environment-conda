@@ -8,7 +8,7 @@ pip install passlib
 # pip install ansible-tower-cli==3.1.7
 pip install ansible-tower-cli
 # for Amazon AWS:
-pip install boto
+pip install boto3
 # for Azure:
 # pip install azure==2.0.0rc5 msrest msrestazure enum packaging
 # for DigitalOcean:
