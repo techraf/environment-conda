@@ -21,3 +21,5 @@ pip install pywinrm
 pip install pyvmomi
 # for Proxmox:
 pip install proxmoxer
+# other:
+pip install molecule
