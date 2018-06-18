@@ -3,3 +3,6 @@ pip install gym
 pip install keras
 pip install tensorflow
 pip install h2o
+pip install rx
+pip install tweepy
+pip install sqlalchemy
