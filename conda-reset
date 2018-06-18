@@ -43,6 +43,7 @@ conda create --yes -n ${conda_environment_for_jupyter_python3} anaconda python=3
 source activate ${conda_environment_for_jupyter_python3}
 conda install --yes notebook ipykernel
 ipython kernel install --user --display-name "Python 3"
+source install-missing-dependencies
 source install-modules-for-data-science
 # shellcheck disable=SC1091
 source deactivate
