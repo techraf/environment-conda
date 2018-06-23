@@ -5,7 +5,7 @@ pip install jmespath
 pip install netaddr
 pip install passlib
 # for Docker:
-pip install docker-py
+pip install docker
 # for Ansible Tower:
 # pip install ansible-tower-cli==3.1.7
 pip install ansible-tower-cli
