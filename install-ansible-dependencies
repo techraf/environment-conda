@@ -22,5 +22,7 @@ pip install pywinrm
 pip install pyvmomi
 # for Proxmox:
 pip install proxmoxer
+# for Hashicorp Vault
+pip install hvac
 # other:
 pip install molecule
