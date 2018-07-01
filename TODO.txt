@@ -1,9 +1,0 @@
-- install (prepare package for) Ansible 2.2.1 rc2 from tarball
-- test import/export of the environment
- - check if pip packages are preserved
-
-
-- Environments
- - scrapper - selenium, beautifulsoup, etc.
- - node for ...
- - ruby for ...
