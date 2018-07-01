@@ -24,5 +24,6 @@ pip install pyvmomi
 pip install proxmoxer
 # for Hashicorp Vault
 pip install hvac
+pip install ansible-modules-hashivault
 # other:
 pip install molecule
