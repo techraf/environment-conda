@@ -7,14 +7,10 @@ environment_name=$(basename "$(${readlink_executable} --canonicalize "${BASH_SOU
 # shellcheck disable=SC1091
 source deactivate
 
-#### py37 environment ####
-
-environment_name=py37
-
-conda remove --yes --name ${environment_name} --all
-conda create --yes -n ${environment_name} python=3.7
+conda remove --yes --name "${environment_name}" --all
+conda create --yes -n "${environment_name}" python=3.7
 # shellcheck disable=SC1091
-source activate ${environment_name}
+source activate "${environment_name}"
 
 pip install boto3
 
