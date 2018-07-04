@@ -1,5 +1,9 @@
 #!/bin/bash
 
+readlink_executable=greadlink
+
+environment_name=$(basename "$(${readlink_executable} --canonicalize "${BASH_SOURCE[0]}")")
+
 # shellcheck disable=SC1091
 source deactivate
 
