@@ -47,3 +47,9 @@ source install-missing-dependencies
 source install-modules-for-data-science
 # shellcheck disable=SC1091
 source deactivate
+
+while read -r filename
+do
+    # shellcheck disable=SC1090
+    source "${filename}"
+done < <(find -L ./environments.d -type f)
