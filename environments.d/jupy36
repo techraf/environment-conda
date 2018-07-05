@@ -1,0 +1,25 @@
+#!/bin/bash
+
+if [ "$(uname -s)" == "Darwin" ]; then
+    readlink_executable=greadlink
+else
+    readlink_executable=readlink
+fi
+
+environment_name=$(basename "$(${readlink_executable} --canonicalize "${BASH_SOURCE[0]}")")
+
+# shellcheck disable=SC1091
+source deactivate
+
+conda remove --yes --name "${environment_name}" --all
+conda create --yes -n "${environment_name}" anaconda python=3.6
+# shellcheck disable=SC1091
+source activate "${environment_name}"
+
+conda install --yes notebook ipykernel
+ipython kernel install --user --display-name "Python 3"
+source ../install-missing-dependencies
+source ../install-modules-for-data-science
+
+# shellcheck disable=SC1091
+source deactivate
