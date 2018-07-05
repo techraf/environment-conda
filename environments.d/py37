@@ -1,6 +1,10 @@
 #!/bin/bash
 
-readlink_executable=greadlink
+if [ "$(uname -s)" == "Darwin" ]; then
+    readlink_executable=greadlink
+else
+    readlink_executable=readlink
+fi
 
 environment_name=$(basename "$(${readlink_executable} --canonicalize "${BASH_SOURCE[0]}")")
 
