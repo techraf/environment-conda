@@ -17,7 +17,8 @@ conda create --yes -n "${environment_name}" anaconda python=3.6
 source activate "${environment_name}"
 
 conda install --yes notebook ipykernel
-ipython kernel install --user --display-name "Python 3"
+ipython kernel install --user --name "${environment_name}" --display-name "Python 3.6 (anaconda)"
+
 source ../install-missing-dependencies
 source ../install-modules-for-data-science
 

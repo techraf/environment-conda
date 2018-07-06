@@ -17,7 +17,7 @@ conda create --yes -n "${environment_name}" anaconda python=2.7
 source activate "${environment_name}"
 
 conda install --yes notebook ipykernel
-ipython kernel install --user --display-name "Python 2"
+ipython kernel install --user --name "${environment_name}" --display-name "Python 2.7 (anaconda)"
 
 # shellcheck disable=SC1091
 source deactivate

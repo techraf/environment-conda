@@ -16,6 +16,9 @@ conda create --yes -n "${environment_name}" python=3.6
 # shellcheck disable=SC1091
 source activate "${environment_name}"
 
+conda install --yes notebook ipykernel
+ipython kernel install --user --name "${environment_name}" --display-name "Python 3.6 (devel)"
+
 pip install boto3
 pip install pyyaml
 
