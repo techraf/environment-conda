@@ -12,15 +12,12 @@ environment_name=$(basename "$(${readlink_executable} --canonicalize "${BASH_SOU
 source deactivate
 
 conda remove --yes --name "${environment_name}" --all
-conda create --yes -n "${environment_name}" anaconda python=3.6
+conda create --name "${environment_name}" --clone _anaconda_python_36
 # shellcheck disable=SC1091
 source activate "${environment_name}"
 
 conda install --yes notebook ipykernel
 ipython kernel install --user --name "${environment_name}" --display-name "Python 3.6 (anaconda)"
-
-source ../install-missing-dependencies
-source ../install-modules-for-data-science
 
 # shellcheck disable=SC1091
 source deactivate
