@@ -12,7 +12,7 @@ environment_name=$(basename "$(${readlink_executable} --canonicalize "${BASH_SOU
 source deactivate
 
 conda remove --yes --name "${environment_name}" --all
-conda create --yes -n "${environment_name}" python=3.6
+conda create --name "${environment_name}" --clone _python_36
 # shellcheck disable=SC1091
 source activate "${environment_name}"
 
@@ -20,6 +20,9 @@ conda install --yes notebook ipykernel
 ipython kernel install --user --name "${environment_name}" --display-name "Python 3.6 (devel)"
 
 pip install pytest
+pip install setuptools
+pip install coverage
+pip install pytest-cov
 pip install boto3 moto
 pip install pyyaml
 
