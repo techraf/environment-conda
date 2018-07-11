@@ -22,7 +22,6 @@ source install-ansible-dependencies
 
 #### include ./environments.d ####
 
-cd ./environments.d || exit
 while read -r filename
 do
     # shellcheck disable=SC1090
