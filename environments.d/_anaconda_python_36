@@ -1,5 +1,7 @@
 #!/bin/bash
 
+current_directory="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
 if [ "$(uname -s)" == "Darwin" ]; then
     readlink_executable=greadlink
 else
@@ -16,8 +18,10 @@ conda create --yes -n "${environment_name}" anaconda python=3.6
 # shellcheck disable=SC1091
 source activate "${environment_name}"
 
-source ../install-missing-dependencies
-source ../install-modules-for-data-science
+# shellcheck disable=SC1090
+source "${current_directory}/../install-missing-dependencies"
+# shellcheck disable=SC1090
+source "${current_directory}/../install-modules-for-data-science"
 
 # shellcheck disable=SC1091
 source deactivate
