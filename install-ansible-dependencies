@@ -25,5 +25,7 @@ pip install proxmoxer
 # for Hashicorp Vault
 pip install hvac
 pip install ansible-modules-hashivault
+# for GitLab
+pip install pyapi-gitlab
 # other:
 pip install molecule
