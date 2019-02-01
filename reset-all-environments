@@ -14,6 +14,7 @@ fi
 
 rm -rf ${anaconda_installation_path}
 bash ${anaconda_installer_path} -b -p ${anaconda_installation_path}
+pip install --upgrade pip
 
 source install-missing-dependencies
 pip install nbstripout nbconvert
