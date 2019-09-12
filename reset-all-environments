@@ -1,9 +1,11 @@
 #!/bin/bash
 
-anaconda_installer_path=~/DML/anaconda/Anaconda2-5.2.0-MacOSX-x86_64.sh
-anaconda_installation_path=~/anaconda2
+#anaconda_installer_path=~/DML/anaconda/Anaconda2-5.2.0-MacOSX-x86_64.sh
+#anaconda_installation_path=~/anaconda2
+anaconda_installer_path=~/DML/anaconda/anaconda-latest
+anaconda_installation_path=~/anaconda3
 
-if ! grep -e "export PATH=.*/anaconda2/bin:\$PATH" ~/.bash_profile; then
+if ! grep -e "export PATH=.*/anaconda3/bin:\$PATH" ~/.bash_profile; then
   echo "Anaconda path not found in ~/.bash_profile"
   echo "I'm expecting it to exist, as I am a refresh script"
   echo "Besides, running Anaconda installer with -b does not add it"
